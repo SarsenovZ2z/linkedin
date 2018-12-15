@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from django.conf import settings
 # Create your views here.
-def testuser(request):
-    print(request.user)
+
+def login(request):
+    return render(request, 'authentication/pages/login.html')
