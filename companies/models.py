@@ -1,7 +1,49 @@
 from django.db import models
-from authentication import User
+from authentication.models import User
+from cities.models import City
 
-# Create your models here.
+# Company Model
 class Company(models.Model):
-    user = models.ForeignKey(User, on_delete=CASCADE)
-    
+    class Meta:
+        verbose_name = "Company"
+        verbose_name_plural = "Companies"
+
+    AO = 'AO'
+    IP = 'IP'
+    COMPANY_TYPES = (
+        (AO, 'Actioner obwestvo'),
+        (IP, 'Individual P.'),
+    )
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, null=True)
+    name = models.CharField(max_length=255, default='')
+    short_name = models.CharField(max_length=255, default='')
+    description = models.TextField(null=True)
+    short_description = models.TextField(null=True)
+    site = models.URLField(null=True)
+    company_type = models.CharField(
+        max_length=255,
+        choices = COMPANY_TYPES,
+        default = IP,
+    )
+
+    def __str__(self):
+        return "{} {}".format(self.company_type, self.short_name);
+
+# Post Model
+class Post(models.Model):
+    class Meta:
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
+
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
+    title = models.CharField(max_length=255)
+    description = models.TextField(null=True)
+    short_description = models.TextField(null=True)
+    content = models.TextField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "{}".format(self.title);
