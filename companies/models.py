@@ -15,10 +15,10 @@ class Company(models.Model):
         ('UP', 'qwe'),
         ('TOO', 'Individual P.'),
         ('IP', 'Individual P.'),
-        ('AOO', 'Individual P.'),
-        ('ZAO', 'Individual P.'),
-        ('GOS', 'Individual P.'),
-        ('OTHER', 'Individual P.'),
+        # ('AOO', 'Individual P.'),
+        # ('ZAO', 'Individual P.'),
+        # ('GOS', 'Individual P.'),
+        # ('OTHER', 'Individual P.'),
     )
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)

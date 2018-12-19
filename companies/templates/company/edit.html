@@ -25,8 +25,7 @@
                 <input type="text" name="site" placeholder="URL"/>
                 <select name='city'>
                     {% for type in types %}
-                        <!-- {{ print(type) }} -->
-                        <!-- <option value="{{ type[0] }}">{{ type[1] }}</option> -->
+                        <option value="{{ type.0 }}">{{ type.1 }}</option>
                     {% endfor %}
                 </select>
                 <input type="hidden" name="next" value="{{ next }}"/>

@@ -11,23 +11,18 @@
     </head>
     <body>
         <div id="wrapper">
-            <form action="{% url 'company-create' %}" method="POST">
+            <form action="{% url 'uers-vacancy-response' %}" method="POST">
                 {% csrf_token %}
-                <select name='city'>
-                    {% for city in cities %}
-                        <option value='{{ city.id }}'>{{ city.name }}</option>
+                <select name="cv">
+                    {% for cv in cvs %}
+                        <option value="{{ cv.id }}">{{ cv.name }}</option>
                     {% endfor %}
                 </select>
                 <input type="text" name="name" placeholder="Name"/>
-                <input type="text" name="short_name" placeholder="Short name"/>
-                <textarea name="short_description" placeholder="Short Description"></textarea>
+                <textarea name="description_short" placeholder="Short Description"></textarea>
                 <textarea name="description" placeholder="Description"></textarea>
-                <input type="text" name="site" placeholder="URL"/>
-                <select name='type'>
-                    {% for type in types %}
-                        <option value="{{ type.0 }}">{{ type.1 }}</option>
-                    {% endfor %}
-                </select>
+                <input type="text" name="salary" placeholder="Salary"/>
+                <textarea name="content" placeholder="Content"></textarea>
                 <input type="hidden" name="next" value="{{ next }}"/>
                 <input type="submit" value="Submit"/>
             </form>
