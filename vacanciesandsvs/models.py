@@ -45,7 +45,7 @@ class Vacancy_response(models.Model):
     cv = models.ForeignKey(User_CV, on_delete=models.CASCADE,null=True)
     message = models.TextField(null=True)# Userdin jibergen message
     seen = models.BooleanField(default=False)
-    respose = models.TextField(null=True)
+    response = models.TextField(null=True)
     date_created = models.DateField(auto_now_add=True)
     date_responded = models.DateField(auto_now=True)
 

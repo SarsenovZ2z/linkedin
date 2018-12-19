@@ -13,11 +13,8 @@
         <div id="wrapper">
             <form action="{% url 'company-vacancy-response' %}" method="POST">
                 {% csrf_token %}
-                <input type="text" name="name" placeholder="Name"/>
-                <textarea name="description_short" placeholder="Short Description"></textarea>
-                <textarea name="description" placeholder="Description"></textarea>
-                <input type="text" name="salary" placeholder="Salary"/>
-                <textarea name="content" placeholder="Content"></textarea>
+                <textarea name="response" placeholder="Response"></textarea>
+                <input type="hidden" name="response_id" value="1"/>
                 <input type="hidden" name="next" value="{{ next }}"/>
                 <input type="submit" value="Submit"/>
             </form>

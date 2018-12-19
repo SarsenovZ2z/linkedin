@@ -11,18 +11,15 @@
     </head>
     <body>
         <div id="wrapper">
-            <form action="{% url 'uers-vacancy-response' %}" method="POST">
+            <form action="{% url 'user-vacancy-response' %}" method="POST">
                 {% csrf_token %}
                 <select name="cv">
                     {% for cv in cvs %}
                         <option value="{{ cv.id }}">{{ cv.name }}</option>
                     {% endfor %}
                 </select>
-                <input type="text" name="name" placeholder="Name"/>
-                <textarea name="description_short" placeholder="Short Description"></textarea>
-                <textarea name="description" placeholder="Description"></textarea>
-                <input type="text" name="salary" placeholder="Salary"/>
-                <textarea name="content" placeholder="Content"></textarea>
+                <textarea name="message" placeholder="Message"></textarea>
+                <input type="hidden" name="vacancy_id" value="1"/>
                 <input type="hidden" name="next" value="{{ next }}"/>
                 <input type="submit" value="Submit"/>
             </form>
