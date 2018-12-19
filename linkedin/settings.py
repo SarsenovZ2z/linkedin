@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'institutions',
     'companies',
     'vacanciesandsvs',
+    'userprofile'
 ]
 
 MIDDLEWARE = [
@@ -128,4 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 AUTH_USER_MODEL = 'authentication.User'
 STATIC_ROOT = PROJECT_DIR
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_DIR, "static"),
+)
 STATIC_URL = '/static/'
