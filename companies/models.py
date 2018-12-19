@@ -9,16 +9,16 @@ class Company(models.Model):
         verbose_name_plural = "Companies"
 
     COMPANY_TYPES = (
-        (OOO, 'Общество с ограниченной ответственностью'),
-        (PAO, 'Публичное акционерное общество'),
-        (AO, 'Акционерное общество'),
-        (UP, ''),
-        (TOO, 'Individual P.'),
-        (IP, 'Individual P.'),
-        (AOO, 'Individual P.'),
-        (ZAO, 'Individual P.'),
-        (GOS, 'Individual P.'),
-        (OTHER, 'Individual P.'),
+        ('OOO', 'Общество с ограниченной ответственностью'),
+        ('PAO', 'Публичное акционерное общество'),
+        ('AO', 'Акционерное общество'),
+        ('UP', 'qwe'),
+        ('TOO', 'Individual P.'),
+        ('IP', 'Individual P.'),
+        ('AOO', 'Individual P.'),
+        ('ZAO', 'Individual P.'),
+        ('GOS', 'Individual P.'),
+        ('OTHER', 'Individual P.'),
     )
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
@@ -31,7 +31,7 @@ class Company(models.Model):
     company_type = models.CharField(
         max_length=255,
         choices = COMPANY_TYPES,
-        default = IP,
+        default = "Individual P.",
     )
 
     def __str__(self):
