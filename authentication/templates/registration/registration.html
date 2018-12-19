@@ -13,12 +13,11 @@
         <div id="wrapper">
             <form action="{% url 'registration' %}" method="POST">
                 {% csrf_token %}
-                <input type="email" name="username" placeholder="E-mail"/>
+                <input type="email" name="email" placeholder="E-mail"/>
                 <input type="text" name="first_name" placeholder="Firstname"/>
                 <input type="text" name="last_name" placeholder="Lastname"/>
                 <input type="password" name="password" placeholder="Password"/>
                 <input type="password" name="password2" placeholder="Confirm password"/>
-                <input type="hidden" name="next" value="/"/>
                 <input type="submit" value="Submit"/>
             </form>
         </div>

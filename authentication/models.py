@@ -44,7 +44,6 @@ class User(AbstractBaseUser):
         max_length=255,
         unique=True,
     )
-    city = models.ForeignKey(City, on_delete=models.CASCADE,null=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
 
