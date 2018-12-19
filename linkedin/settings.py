@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'authentication',
     'cities',
     'institutions',
-    # 'companies',
+    'companies',
+    'userprofile',
 ]
 
 MIDDLEWARE = [
