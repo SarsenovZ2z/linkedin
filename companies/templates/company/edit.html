@@ -23,10 +23,9 @@
                 <textarea name="short_description" placeholder="Short Description"></textarea>
                 <textarea name="description" placeholder="Description"></textarea>
                 <input type="text" name="site" placeholder="URL"/>
-                <select name='city'>
+                <select name='type'>
                     {% for type in types %}
-                        <!-- {{ print(type) }} -->
-                        <!-- <option value="{{ type[0] }}">{{ type[1] }}</option> -->
+                        <option value="{{ type.0 }}">{{ type.1 }}</option>
                     {% endfor %}
                 </select>
                 <input type="hidden" name="next" value="{{ next }}"/>
