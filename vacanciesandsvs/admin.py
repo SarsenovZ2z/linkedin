@@ -7,3 +7,5 @@ class EducationAdmin(admin.ModelAdmin):
     # list_display = ('name', 'code')
 
 admin.site.register(Education, EducationAdmin)
+admin.site.register(User_CV)
+

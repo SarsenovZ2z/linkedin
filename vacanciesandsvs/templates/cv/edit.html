@@ -11,7 +11,7 @@
     </head>
     <body>
         <div id="wrapper">
-            <form action="{% url 'resume-create' %}" method="POST">
+            <form action="{% url 'resume-edit' %}" method="POST">
                 {% csrf_token %}
                 <input type="text" name="name" placeholder="Name"/>
                 <textarea name="description_short" placeholder="Short Description"></textarea>
