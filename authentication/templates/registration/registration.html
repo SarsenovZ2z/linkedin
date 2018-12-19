@@ -11,11 +11,12 @@
     </head>
     <body>
         <div id="wrapper">
-            <form action="{% url 'login' %}" method="POST">
+            <form action="{% url 'registration' %}" method="POST">
                 {% csrf_token %}
-                <input type="email" name="username"/>
-                <input type="password" name="password"/>
-                <input type="hidden" name="next" value="{{ next }}"/>
+                <input type="email" name="username" placeholder="E-mail"/>
+                <input type="password" name="password" placeholder="Password"/>
+                <input type="password" name="password2" placeholder="Confirm password"/>
+                <input type="hidden" name="next" value="/"/>
                 <input type="submit" value="Submit"/>
             </form>
         </div>

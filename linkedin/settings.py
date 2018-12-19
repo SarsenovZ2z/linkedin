@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-LOGIN_REDIRECT_URL = 'main/'
+LOGIN_REDIRECT_URL = '/home'
 
 MEDIA_URL = '/media/'
 # Application definition
