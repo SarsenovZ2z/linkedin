@@ -2,6 +2,5 @@ from django.urls import path,include
 from .views import *
 
 urlpatterns = [
-    path('login', login),
-    path('login1', login),
+    path('', include('django.contrib.auth.urls')),
 ]
