@@ -8,11 +8,17 @@ class Company(models.Model):
         verbose_name = "Company"
         verbose_name_plural = "Companies"
 
-    AO = 'AO'
-    IP = 'IP'
     COMPANY_TYPES = (
-        (AO, 'Actioner obwestvo'),
+        (OOO, 'Общество с ограниченной ответственностью'),
+        (PAO, 'Публичное акционерное общество'),
+        (AO, 'Акционерное общество'),
+        (UP, ''),
+        (TOO, 'Individual P.'),
         (IP, 'Individual P.'),
+        (AOO, 'Individual P.'),
+        (ZAO, 'Individual P.'),
+        (GOS, 'Individual P.'),
+        (OTHER, 'Individual P.'),
     )
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
