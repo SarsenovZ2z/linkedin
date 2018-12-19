@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'cities',
     'institutions',
     'companies',
-    'vacanciesandsvs'
+    'vacanciesandsvs',
+    'userprofile',
 ]
 
 MIDDLEWARE = [
