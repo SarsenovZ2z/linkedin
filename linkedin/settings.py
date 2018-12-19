@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 
 
 LOGIN_REDIRECT_URL = 'main/'
+
+MEDIA_URL = '/media/'
 # Application definition
 
 LOCKDOWN_ADMIN = False

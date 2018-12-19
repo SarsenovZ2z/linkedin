@@ -16,8 +16,8 @@ def current_year():
 class Education(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     institution = models.ForeignKey(Institution, on_delete=models.CASCADE,null=True)
-    year_receipt = models.IntegerField(_('year'), choices=year_choices, default=current_year)
-    year_graduation = models.IntegerField(_('year'), choices=year_choices, default=current_year)
+    year_receipt = models.IntegerField('ASD', choices=year_choices(), default=current_year)
+    year_graduation = models.IntegerField('ASD2', choices=year_choices(), default=current_year)
     degree = models.CharField(max_length=255)
 
 
@@ -47,7 +47,7 @@ class Vacancy_response(models.Model):
     seen = models.BooleanField(default=False)
     respose = models.TextField(null=True)
     date_created = models.DateField(auto_now_add=True)
-    date = responded = models.DateField(auto_now=True)
+    date_responded = models.DateField(auto_now=True)
 
 class User_experience(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
