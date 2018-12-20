@@ -19,7 +19,7 @@
                     {% endfor %}
                 </select>
                 <textarea name="message" placeholder="Message"></textarea>
-                <input type="hidden" name="vacancy_id" value="1"/>
+                <input type="hidden" name="vacancy_id" value="{{ vid }}"/>
                 <input type="hidden" name="next" value="{{ next }}"/>
                 <input type="submit" value="Submit"/>
             </form>

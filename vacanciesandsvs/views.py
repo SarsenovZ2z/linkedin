@@ -42,14 +42,23 @@ def vacancyEdit(request):
 
 def userVacancyResponse(request):
     if request.method == 'POST':
-        return print(request.POST)
+        res = Vacancy_response()
+        res.cv = User_CV.objects.get(pk=request.POST['cv'])
+        res.vacancy = Vacancy.objects.get(pk=request.POST['vacancy_id'])
+        res.message = request.POST['message']
+        res.save()
     else:
+        vacancy_id = request.GET['id']
         cvs = User_CV.objects.filter(user=request.user.id)
-        return render(request, 'response/user.html', {'cvs': cvs})
+        return render(request, 'response/user.html', {'cvs': cvs, 'vid': vacancy_id})
 
 def companyVacancyResponse(request):
     if request.method == 'POST':
-        return print(request.POST)
+        res = Vacancy_response.objects.get(pk=request.POST['vacancy_id'])
+        res.response = request.POST['response']
+        res.seen = True
+
+        res.save()
     else:
         cvs = User_CV.objects.filter(user=request.user.id)
         return render(request, 'response/company.html', {'cvs': cvs})

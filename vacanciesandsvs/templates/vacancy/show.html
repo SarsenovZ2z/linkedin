@@ -6,6 +6,7 @@
         <div>
             <h1>{{ vacancy.name }}</h1>
             <p>{{ vacancy.description }}</p>
+            <a href="{% url 'user-vacancy-response' %}?id={{ vacancy.id }}">Откликнутся</a>
         </div>
     {% endfor %}
 </main>
