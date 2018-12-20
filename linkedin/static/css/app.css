@@ -1,0 +1,61 @@
+.navbar-brand {
+    padding-right: 80px;
+}
+.navbar-nav {
+    color: white;
+}
+.nav-item {
+    padding: 0px 15px;
+}
+.nav-item:not(:last-child) {
+    border-right: 1px solid grey;
+}
+.dropdown-menu {
+    left: -80%;
+}
+main {
+    min-height: 100vh;
+}
+.banner {
+    background-image: url('/static/img/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: auto 100px;
+}
+.banner-inner {
+    min-height: 500px;
+    background-color: rgba(0, 0, 0, 0.4)
+}
+.banner-title {
+    padding: 100px;
+    padding-left: 180px;
+    font-size: 3.5em;
+    font-weight: bolder;
+    color: white;
+}
+.login-register-btns {
+    font-size: 1.1em;
+    text-align: center;
+    padding: 20px;
+}
+.login-register-btns a {
+    color: white;
+    font-weight: bolder;
+}
+.login-form {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    min-height: 50px;
+    background-color: black;
+    color: white;
+}
+.copyright {
+    float: right;
+    font-size: 0.75em;
+}

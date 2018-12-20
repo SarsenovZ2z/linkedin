@@ -36,3 +36,7 @@ def companyEdit(request):
         cities = City.objects.all();
         types = Company.COMPANY_TYPES
         return render(request, "company/edit.html", {'cities': cities, 'types': types})
+
+def companies(request):
+    companies = Company.objects.all()
+    return render(request, 'company/show.html', {'companies': companies})
