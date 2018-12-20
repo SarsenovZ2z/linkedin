@@ -4,7 +4,16 @@ from .models import Company
 # Create your views here.
 def companyCreate(request):
     if request.method=='POST':
-        return print(request.POST)
+        company = Company()
+        company.user = request.user
+        company.city = City.objects.get(pk=request.POST['city'])
+        company.description = request.POST['description']
+        company.name = request.POST['name']
+        company.short_description = request.POST['short_description']
+        company.site = request.POST['site']
+        company.short_name = request.POST['short_name']
+        company.COMPANY_TYPES = request.POST['type']
+        company.save()
     else:
         cities = City.objects.all();
         types = Company.COMPANY_TYPES
@@ -12,7 +21,17 @@ def companyCreate(request):
 
 def companyEdit(request):
     if request.method=='POST':
-        return print(request.POST)
+        company = Company.objects.get(user=request.user.id)
+        company.user = request.user
+        company.city = City.objects.get(pk=request.POST['city'])
+        company.description = request.POST['description']
+        company.name = request.POST['name']
+        company.short_description = request.POST['short_description']
+        company.site = request.POST['site']
+        company.short_name = request.POST['short_name']
+        company.COMPANY_TYPES = request.POST['type']
+        company.save()
+
     else:
         cities = City.objects.all();
         types = Company.COMPANY_TYPES
