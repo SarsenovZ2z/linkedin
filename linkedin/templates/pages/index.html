@@ -1,5 +1,9 @@
 {% extends 'layouts/master.html' %}
 
 {% block content %}
-    LINKDEDIN
+    {% if user.is_authenticated %}
+        {% include "partials/home/user.html" %}
+    {% else %}
+        {% include "partials/home/guest.html" %}
+    {% endif %}
 {% endblock %}
