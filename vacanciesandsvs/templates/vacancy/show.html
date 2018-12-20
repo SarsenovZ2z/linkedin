@@ -1,0 +1,12 @@
+{% extends 'layouts/master.html' %}
+
+{% block content %}
+<main>
+    {% for vacancy in vacncies %}
+        <div>
+            <h1>{{ vacancy.name }}</h1>
+            <p>{{ vacancy.description }}</p>
+        </div>
+    {% endfor %}
+</main>
+{% endblock %}
