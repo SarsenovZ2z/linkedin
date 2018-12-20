@@ -2,10 +2,11 @@
 
 {% block content %}
 <main>
-    {% for vacancy in vacncies %}
+    {% for vacancy in vacancies %}
         <div>
             <h1>{{ vacancy.name }}</h1>
             <p>{{ vacancy.description }}</p>
+            <div></div>
         </div>
     {% endfor %}
 </main>

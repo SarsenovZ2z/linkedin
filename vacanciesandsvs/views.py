@@ -55,9 +55,9 @@ def companyVacancyResponse(request):
         return render(request, 'response/company.html', {'cvs': cvs})
 
 def vacancies(request):
-    vacncies = Vacancy.objects.all()
+    vacancies = Vacancy.objects.all()
     return render(request, 'vacancy/show.html', {'vacancies': vacancies})
 
 def cvs(request):
-    cvs = Vacancy.objects.all()
+    cvs = User_CV.objects.all()
     return render(request, 'cv/show.html', {'cvs': cvs})

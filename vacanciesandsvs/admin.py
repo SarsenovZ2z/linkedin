@@ -14,3 +14,4 @@ class CvAdmin(admin.ModelAdmin):
     # list_display = ('name', 'code')
 
 admin.site.register(User_CV, CvAdmin)
+admin.site.register(Vacancy)

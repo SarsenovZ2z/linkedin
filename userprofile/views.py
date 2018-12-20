@@ -4,7 +4,7 @@ from .models import Profile
 # Create your views here.
 def profileEdit(request):
     if request.method == 'POST':
-        p = Profile()
+        p = Profile.objects.get(user=request.user.id)
         p.user = request.user
         p.city = City.objects.get(pk=request.POST['city'])
         p.phone = request.POST['phone']

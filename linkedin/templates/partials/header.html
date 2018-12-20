@@ -20,11 +20,9 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{% url 'vacancies' %}">Vacancies <span class="sr-only">(current)</span></a>
                         </li>
-                        {% if user.has_company %}
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{% url 'cvs' %}">Cvs <span class="sr-only">(current)</span></a>
-                            </li>
-                        {% endif %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'cvs' %}">Cvs <span class="sr-only">(current)</span></a>
+                        </li>
                     {% else %}
                         <li class="nav-item active">
                             <a class="nav-link" href="/">Login <span class="sr-only">(current)</span></a>

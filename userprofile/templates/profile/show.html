@@ -5,11 +5,13 @@
     <div class="user-profile">
         <div class="container">
             <div class="row">
-                <div class="col-sm-5">
-
+                <div class="col-sm-2">
+                    <img src="images/{{ user.profile.image }}">
+                    <p>{{ user.profile.image }}</p>
                 </div>
-                <div class="col-sm-7">
-
+                <div class="col-sm-10">
+                    <h3>{{ user.first_name}} {{ user.last_name}}</h3>
+                    <h5>Birth date: {{ user.profile.date_of_birth }}</h5>
                 </div>
             </div>
         </div>

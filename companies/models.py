@@ -24,13 +24,13 @@ class Company(models.Model):
     city = models.ForeignKey(City, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=255, default='')
     short_name = models.CharField(max_length=255, default='')
-    description = models.TextField(null=True)
-    short_description = models.TextField(null=True)
-    site = models.URLField(null=True)
+    description = models.TextField(null=True, default='')
+    short_description = models.TextField(null=True,default='')
+    site = models.URLField(null=True,default='')
     company_type = models.CharField(
         max_length=255,
         choices = COMPANY_TYPES,
-        default = "Individual P.",
+        default = "Индивидуальный предприниматель",
     )
 
     def __str__(self):

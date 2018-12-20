@@ -20,13 +20,13 @@
                     {% else %}
                         <div class="user-cvs">
                             <h4>Мои резюме</h4>
-                            <ul class="nav flex-column actions">
+                            <div class="nav flex-column actions">
                                 {% for cv in cvs %}
-                                    <li class="">
-                                        <a class="nav-link" href="#"></a>
-                                    </li>
+                                    <h1>{{ cv.name }}</h1>
+                                    <h3>{{ cv.description }}</h3>
+                                    <hr/>
                                 {% endfor %}
-                            </ul>
+                            </div>
                         </div>
                     {% endif %}
                 </div>

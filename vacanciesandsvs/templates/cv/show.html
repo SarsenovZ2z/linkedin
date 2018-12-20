@@ -1,0 +1,12 @@
+{% extends 'layouts/master.html' %}
+
+{% block content %}
+<main>
+    {% for cv in cvs %}
+        <div>
+            <h1>{{ cv.name }}</h1>
+            <p>{{ cv.description }}</p>
+        </div>
+    {% endfor %}
+</main>
+{% endblock %}
