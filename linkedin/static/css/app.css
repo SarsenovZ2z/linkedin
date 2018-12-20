@@ -34,6 +34,15 @@ main {
     font-weight: bolder;
     color: white;
 }
+.banner-number-of {
+    padding-left: 180px;
+    font-size: 150%;
+    color: white;
+}
+.banner-number {
+    font-size: 175%;
+    font-weight: bolder;
+}
 .login-register-btns {
     font-size: 1.1em;
     text-align: center;
@@ -61,4 +70,15 @@ footer {
 }
 .user-main {
     padding-top: 50px;
+}
+.companies {
+    padding-top: 50px;
+}
+.left-nav {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#is_employer {
+
 }

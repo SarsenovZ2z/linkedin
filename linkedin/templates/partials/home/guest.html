@@ -5,6 +5,15 @@
                 <div class="row">
                     <div class="col-sm-8">
                         <h1 class="banner-title">Найди работу мечты</h1>
+                        <div class="row banner-number-of">
+                            <div class="col-sm-6">
+                                Всего вакансии: <div class="banner-number">{{ number_of_vacancies }}</div>
+                            </div>
+                            <div class="col-sm-6">
+                                Всего резюме: <div class="banner-number">{{ number_of_cvs }}</div>
+                            </div>
+                        </div>
+                        <h4 class="banner-number-of"></h4>
                     </div>
                     <div class="col-sm-4">
                         <div class="login-form">
@@ -41,6 +50,12 @@
                                     <form action="{% url 'registration' %}" method="POST">
                                         {% csrf_token %}
                                         <div class="form-group">
+                                            <select class="form-control" name="is_employer">
+                                                <option value="1">Ищу работу</option>
+                                                <option value="0">Ищу сотрудников</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
                                             <input class="form-control" type="email" name="email" placeholder="E-mail" required/>
                                         </div>
                                         <div class="form-group">
@@ -55,7 +70,7 @@
                                         <div class="form-group">
                                             <input class="form-control" type="password" name="password2" placeholder="Confirm password" required/>
                                         </div>
-                                        <input type="hidden" name="next" value="{{ next }}"/>
+                                        <input type="hidden" name="next" value="{% url 'edit' %}"/>
                                         <div class="form-group">
                                             <input class="form-control btn btn-primary" type="submit" value="Register"/>
                                         </div>

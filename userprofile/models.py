@@ -6,9 +6,9 @@ from cities.models import City
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
-    phone = models.IntegerField()
-    skype = models.CharField(max_length=255)
-    date_of_birth = models.DateField()
+    phone = models.IntegerField(null=True)
+    skype = models.CharField(max_length=255, null=True)
+    date_of_birth = models.DateField(null=True)
     image = models.ImageField(upload_to='images', blank=True, default='images\default_image.jpg')
 
     def __str__(self):

@@ -1,0 +1,48 @@
+{% extends 'layouts/master.html' %}
+
+{% block content %}
+<main>
+    {% if is_company %}
+
+        <form action="{% url 'company-edit' %}" method="POST">
+            {% csrf_token %}
+            <select name='city'>
+                {% for city in cities %}
+                    <option value='{{ city.id }}'>{{ city.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="text" name="name" placeholder="Name"/>
+            <input type="text" name="short_name" placeholder="Short name"/>
+            <textarea name="short_description" placeholder="Short Description"></textarea>
+            <textarea name="description" placeholder="Description"></textarea>
+            <input type="text" name="site" placeholder="URL"/>
+            <select name='type'>
+                {% for type in types %}
+                    <option value="{{ type.0 }}">{{ type.1 }}</option>
+                {% endfor %}
+            </select>
+            <input type="hidden" name="next" value="{{ next }}"/>
+            <input type="submit" value="Submit"/>
+        </form>
+
+    {% else %}
+
+        <form action="{% url 'profile-edit' %}" method="POST">
+            {% csrf_token %}
+            <select name='city'>
+                {% for city in cities %}
+                    <option value='{{ city.id }}'>{{ city.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="text" name="phone" placeholder="Phone"/>
+            <input type="text" name="skype" placeholder="Skype"/>
+            <input type="date" name="date_of_birth" placeholder="Birth Date"/>
+            <input type="file" name="image"/>
+            <input type="hidden" name="next" value="{{ next }}"/>
+            <input type="submit" value="Submit"/>
+        </form>
+
+
+    {% endif %}
+</main>
+{% endblock %}
