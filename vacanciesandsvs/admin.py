@@ -8,6 +8,7 @@ class EducationAdmin(admin.ModelAdmin):
 
 admin.site.register(Education, EducationAdmin)
 
+
 class CvAdmin(admin.ModelAdmin):
     pass
     # list_display = ('name', 'code')

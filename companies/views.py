@@ -38,5 +38,5 @@ def companyEdit(request):
         return render(request, "company/edit.html", {'cities': cities, 'types': types})
 
 def companies(request):
-    # TODO
+    companies = Company.objects.all()
     return render(request, 'company/show.html', {'companies': companies})

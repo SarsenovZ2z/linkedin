@@ -12,13 +12,12 @@ class Company(models.Model):
         ('OOO', 'Общество с ограниченной ответственностью'),
         ('PAO', 'Публичное акционерное общество'),
         ('AO', 'Акционерное общество'),
-        ('UP', 'qwe'),
-        ('TOO', 'Individual P.'),
-        ('IP', 'Individual P.'),
-        # ('AOO', 'Individual P.'),
-        # ('ZAO', 'Individual P.'),
-        # ('GOS', 'Individual P.'),
-        # ('OTHER', 'Individual P.'),
+        ('UP', 'Учебное производство'),
+        ('TOO', 'Товарищество с ограниченной ответственностью '),
+        ('IP', 'Индивидуальный предприниматель'),
+        ('AOO', 'Автономная организация образования'),
+        ('ZAO', 'Закрытое акцтонерное общество'),
+        ('OTHER', 'Другое'),
     )
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
