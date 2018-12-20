@@ -15,3 +15,7 @@ def profileEdit(request):
     else:
         cities = City.objects.all()
         return render(request, 'profile/edit.html', {'cities': cities})
+
+def profile(request):
+    user = request.user
+    return render(request, 'profile/show.html', {'user': user})
