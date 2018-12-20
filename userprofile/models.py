@@ -9,7 +9,7 @@ class Profile(models.Model):
     phone = models.IntegerField()
     skype = models.CharField(max_length=255)
     date_of_birth = models.DateField()
-    image = models.ImageField(upload_to='images', blank=True)
+    image = models.ImageField(upload_to='images', blank=True, default='images\default_image.jpg')
 
     def __str__(self):
         # data = {'city_id': self.city, 'phone': self.phone, 'skype': self.skype, 'date_of_birth': self.date_of_birth}

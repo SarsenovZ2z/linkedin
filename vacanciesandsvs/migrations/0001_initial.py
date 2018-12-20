@@ -70,7 +70,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255)),
                 ('message', models.TextField(null=True)),
                 ('seen', models.BooleanField(default=False)),
-                ('respose', models.TextField(null=True)),
+                ('response', models.TextField(null=True)),
                 ('date_created', models.DateField(auto_now_add=True)),
                 ('date_responded', models.DateField(auto_now=True)),
                 ('cv', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='vacanciesandsvs.User_CV')),
